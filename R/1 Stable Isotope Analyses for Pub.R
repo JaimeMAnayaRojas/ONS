@@ -9,8 +9,6 @@ library("matlib")
 library("MASS")
 library("stringr")
 
-setwd("/home/jaime/Dropbox/Projects_JM/FSU/Isotopes_Trinidad/ONS/ONS")
-
 data = read.csv("data/data for Pub.csv")
 
 data$count <- 1
@@ -358,18 +356,9 @@ dS.func.comm <- function(sizes,means,vcov,its){
 d <- dS.func.comm(sizes=sizes,means=summary(mod)$coef[,c('Estimate')],vcov=summary(mod)$vcov,its=10000)
 
 
+write.csv(as.data.frame(precis(d, prob = .95)), "Results/N15_DS.csv")
 
-c(mean(d[['S.KG.nat']]),hdi(d[['S.KG.nat']], credMass = 0.95))
-c(mean(d[['D.K.KGP.KG']]),hdi(d[['D.K.KGP.KG']], credMass = 0.95))
-c(mean(d[['D.K.KO.KG']]),hdi(d[['D.K.KO.KG']], credMass = 0.95))
-c(mean(d[['D.G.KGP.KG']]),hdi(d[['D.G.KGP.KG']], credMass = 0.95))
-
-
-# #Similarity
-c(mean(d[['S.KGP']]),hdi(d[['S.KGP']], credMass = 0.95))
-c(mean(d[['S.KG.old']]),hdi(d[['S.KG.old']], credMass = 0.95))
-c(mean(d[['S.KG.exp']]),hdi(d[['S.KG.exp']], credMass = 0.95))
-c(mean(d[['S.KG.nat']]),hdi(d[['S.KG.nat']], credMass = 0.95))
+precis(d, prob = .95)
 
 
 
@@ -621,21 +610,9 @@ sizes <- seq(center.size,30,length.out=25)#c(center.size:35)
 d <- dS.func.comm(sizes=sizes,means=summary(mod)$coef[,c('Estimate')],vcov=summary(mod)$vcov,its=10000)
 
 
+write.csv(as.data.frame(precis(d, prob = .95)), "Results/C13_DS.csv")
 
-
-c(mean(d[['S.KG.nat']]),hdi(d[['S.KG.nat']], credMass = 0.95))
-c(mean(d[['D.K.KGP.KG']]),hdi(d[['D.K.KGP.KG']], credMass = 0.95))
-c(mean(d[['D.K.KO.KG']]),hdi(d[['D.K.KO.KG']], credMass = 0.95))
-c(mean(d[['D.G.KGP.KG']]),hdi(d[['D.G.KGP.KG']], credMass = 0.95))
-
-
-# #Similarity
-c(mean(d[['S.KGP']]),hdi(d[['S.KGP']], credMass = 0.95))
-c(mean(d[['S.KG.old']]),hdi(d[['S.KG.old']], credMass = 0.95))
-c(mean(d[['S.KG.exp']]),hdi(d[['S.KG.exp']], credMass = 0.95))
-c(mean(d[['S.KG.nat']]),hdi(d[['S.KG.nat']], credMass = 0.95))
-
-
+precis(d, prob = .95)
 
 
 #################################################################################################################
