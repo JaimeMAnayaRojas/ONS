@@ -28,7 +28,11 @@ ddply(data,c('drainage','stream','Habitat'),summarise,N=mean(d13Cb))
 
 center.size <- 10
 
+names(data)
 data$Length.cen <- (data$Length - center.size)
+
+# sample sizes
+ddply(data,c('SP',"drainage","stream",'Habitat'),summarise,N=sum(count))
 
 ##################################################################################################################################
 ##################################################################################################################################
