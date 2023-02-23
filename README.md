@@ -1,6 +1,4 @@
-# Project Name
-
-Does the Evolution of Ontogenetic Niche Shifts Favor Species Coexistence? An empirical test in Trinidadian streams. 
+# Does the Evolution of Ontogenetic Niche Shifts Favor Species Coexistence? An empirical test in Trinidadian streams. 
 By Jaime M. Anaya-Rojas, Ronald D. Bassar, Blake Matthews, Joshua F. Goldberg, Leighton King, David Reznick, and Joseph Travis.
 Acepted in the Journal Of Animal Ecology
 
@@ -33,9 +31,9 @@ This project was used to conduct a scientific study titled "Does the Evolution o
 
 The R packages required for running the code in `R/Main_script.R` are listed in the `requirements.R` file. You can install the packages by running the following command in your R console:
 
-'''R
+```R
 install.packages(c("MuMIn","partR2","stringr","plyr","lme4","lmerTest","Hmisc"))
-'''
+```
 
 ## Usage
 
